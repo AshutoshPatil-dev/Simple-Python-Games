@@ -73,13 +73,13 @@ def get_feedback(guess, secret):
             feedback[i] = "correct"
             secret_list[i] = None
             guess_list[i] = None
-            
+    
     # Present pass
     for i in range(len(secret)):
         if guess_list[i] is not None and guess_list[i] in secret_list:
             feedback[i] = "present"
             secret_list[secret_list.index(guess_list[i])] = None
-            
+
     return feedback
 
 def draw_header():
@@ -95,7 +95,7 @@ def draw_keyboard(keyboard_state):
         "ASDFGHJKL",
         "ZXCVBNM"
     ]
-    
+
     print("\n" + " " * 4 + "Keyboard Status:")
     for row_idx, row in enumerate(rows):
         padding = " " * (row_idx * 2 + 4)
